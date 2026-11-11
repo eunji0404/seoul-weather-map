@@ -8,6 +8,7 @@
     "dev:web": "vite",
     "dev:server": "node --watch server/index.js",
     "build": "tsc --noEmit && vite build",
+    "start": "node server/index.js",
     "preview": "vite preview",
     "probe": "node server/probe.js"
   },

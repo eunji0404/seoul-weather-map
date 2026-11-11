@@ -12,7 +12,9 @@ const __dirname = path.dirname(__filename);
 const DIST_PATH = path.resolve(__dirname, '../dist');
 
 const PORT = Number(process.env.PORT) || 3001;
-const AUTH_KEY = process.env.KMA_AUTH_KEY;
+const AUTH_KEY = process.env.KMA_AUTH_KEY
+  ? process.env.KMA_AUTH_KEY.replace(/^["']|["']$/g, '').trim()
+  : null;
 const URL_GRID =
   process.env.KMA_GRID_URL ||
   'https://apihub.kma.go.kr/api/typ01/cgi-bin/url/nph-dfs_shrt_grd';
